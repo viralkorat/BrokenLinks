@@ -6,6 +6,7 @@
 	<artifactId>BrokenLinks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BrokenAndUniqueLinks</name>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>

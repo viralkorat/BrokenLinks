@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -21,6 +22,7 @@ public class BrokenLink {
 		WebDriver driver = new ChromeDriver();
 
 		driver.get("https://www.facebook.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		List<WebElement> link = driver.findElements(By.tagName("a"));
 
 		System.out.println("Total number of links : " + link.size());
@@ -66,7 +68,6 @@ public class BrokenLink {
 
 			URL linkUrl = new URL(uniqueLinkList.get(i));
 			HttpURLConnection httpConn = (HttpURLConnection) linkUrl.openConnection();
-			Thread.sleep(2000);
 
 			int respCode = httpConn.getResponseCode();
 
